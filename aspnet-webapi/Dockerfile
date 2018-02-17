@@ -1,5 +1,4 @@
 FROM microsoft/aspnetcore-build:2 as builder  
-ENV DOTNET_CLI_TELEMETRY_OPTOUT 1
 
 RUN mkdir -p /root/src/app  
 WORKDIR /root/src/app  
