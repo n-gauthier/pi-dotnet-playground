@@ -13,6 +13,7 @@ namespace webapi.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            Console.WriteLine("ValuesController GET");
             return new string[] { "value1", "value2" };
         }
 
@@ -20,6 +21,7 @@ namespace webapi.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
+            Console.WriteLine("ValuesController GET/" + id);
             return "value";
         }
 
@@ -27,18 +29,21 @@ namespace webapi.Controllers
         [HttpPost]
         public void Post([FromBody]string value)
         {
+            Console.WriteLine("ValuesController POST/" + value);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
         {
+            Console.WriteLine("ValuesController PUT/" + id + "/" + value);
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            Console.WriteLine("ValuesController DELETE/" + id);
         }
     }
 }
